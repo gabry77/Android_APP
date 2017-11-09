@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Country_list">
+
+        <item>AUD- Australia</item>
+        <item>BRL- Brasil</item>
+        <item>BGN- Bulgária</item>
+        <item>CAD- Canada</item>
+        <item>CNY- China</item>
+        <item>CZK- Czech Republic</item>
+        <item>DKK- Denmark</item>
+        <item>HKD- HongKong</item>
+        <item>USD- EUA</item>
+        <item>INR- India</item>
+        <item>JPY- Japan</item>
+        <item>MXN- México</item>
+        <item>MYR- Malasia</item>
+        <item>RUB- Russia</item>
+        <item>SGD- Singapore</item>
+        <item>KRW- South Korea</item>
+        <item>SEK- Sweden</item>
+        <item>CHF- Swiss</item>
+        <item>TRY- Turkish</item>
+        <item>GBP- United Kingdom</item>
+        <item>EUR- EURO</item>
+
+    </string-array>
+
+    <string name="app_name">TestExchange</string>
+    <string name="label_initial">Select a currency from the menu and see the rate from Euros</string>
+    <string name="hint_rate">rate</string>
+    <string name="item_clear">Clear</string>
+    <string name="currency">Currency</string>
+    <string name="value">Value</string>
+    <string name="convert">Convert</string>
+    <string name="listbutton">See Rates</string>
+</resources>
