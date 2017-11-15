@@ -1,21 +1,28 @@
+<?xml version="1.0"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
+
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
-        tools:ignore="InefficientWeight,UselessParent">
+        tools:ignore="InefficientWeight,UselessParent"
+        android:background="@drawable/back_money">
 
         <TextView
             android:id="@+id/Current_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:layout_alignStart="@+id/spinner"
             android:layout_alignTop="@+id/ValueText_ID"
+            android:layout_toStartOf="@id/Current_id"
+            android:layout_weight="1"
             android:text="@string/currency"
             tools:ignore="ObsoleteLayoutParam" />
 
@@ -24,8 +31,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="false"
-            android:layout_marginEnd="103dp"
+            android:layout_alignStart="@id/PutValue"
+            android:layout_toStartOf="@+id/Current_id"
             android:text="@string/value" />
 
         <Spinner
@@ -34,32 +41,28 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/Current_id"
-            android:layout_marginStart="33dp"
-            android:layout_marginTop="36dp" />
+            android:layout_marginStart="33dp" />
 
         <Spinner
             android:id="@+id/spinner2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/spinner"
-            android:layout_below="@+id/spinner"
-            android:layout_marginTop="29dp" />
+            android:layout_below="@+id/spinner" />
 
         <Spinner
             android:id="@+id/spinner3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/spinner2"
-            android:layout_below="@+id/spinner2"
-            android:layout_marginTop="22dp" />
+            android:layout_below="@+id/spinner2" />
 
         <Spinner
             android:id="@+id/spinner4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignStart="@+id/spinner3"
-            android:layout_below="@+id/spinner3"
-            android:layout_marginTop="24dp" />
+            android:layout_below="@+id/spinner3" />
 
         <TextView
             android:id="@+id/ShowSpinner2"
@@ -122,7 +125,7 @@
             android:visibility="invisible" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/test2"
             android:layout_alignParentEnd="true"
