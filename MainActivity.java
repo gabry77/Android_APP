@@ -21,13 +21,16 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class MainActivity extends Activity {
-    private TextView ShowSpinner2, ShowSpinner3, ShowSpinner4;
     TextView test1, test2;
     Spinner spinner, spinner2, spinner3, spinner4;
     EditText PutValue;
-    private static final String KEY_TEXT_VALUE_1="textValue1";
-    private static final String KEY_TEXT_VALUE_2="textValue2";
-    private static final String KEY_TEXT_VALUE_3="textValue3";
+    private TextView ShowSpinner2;
+    private TextView ShowSpinner3;
+    private TextView ShowSpinner4;
+    private static final String KEY_TEXT_VALUE_1 = "textValue1";
+    private static final String KEY_TEXT_VALUE_2 = "textValue2";
+    private static final String KEY_TEXT_VALUE_3 = "textValue3";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +55,14 @@ public class MainActivity extends Activity {
         spinner2.setAdapter(customAdapter);
         spinner3.setAdapter(customAdapter);
         spinner4.setAdapter(customAdapter);
+        if (savedInstanceState != null) {
+            CharSequence savedText = savedInstanceState.getCharSequence(KEY_TEXT_VALUE_1);
+            ShowSpinner2.setText(savedText);
+            CharSequence savedText2 = savedInstanceState.getCharSequence(KEY_TEXT_VALUE_2);
+            ShowSpinner3.setText(savedText2);
+            CharSequence savedText3 = savedInstanceState.getCharSequence(KEY_TEXT_VALUE_3);
+            ShowSpinner4.setText(savedText3);
+        }
 
         final Button button = findViewById(R.id.ConvertButton);
         button.setOnClickListener(new View.OnClickListener() {
@@ -60,18 +71,9 @@ public class MainActivity extends Activity {
                 onItemSelected(spinner, spinner3, ShowSpinner3);
                 onItemSelected(spinner, spinner4, ShowSpinner4);
 
-
             }
         });
 
-        if (savedInstanceState != null) {
-           CharSequence savedText = savedInstanceState.getCharSequence(KEY_TEXT_VALUE_1);
-            ShowSpinner2.setText(savedText);
-            CharSequence savedText2 = savedInstanceState.getCharSequence(KEY_TEXT_VALUE_2);
-            ShowSpinner3.setText(savedText2);
-            CharSequence savedText3 = savedInstanceState.getCharSequence(KEY_TEXT_VALUE_3);
-            ShowSpinner4.setText(savedText3);
-        }
         Button ListRates = findViewById(R.id.ListButton);
         ListRates.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -80,17 +82,12 @@ public class MainActivity extends Activity {
         });
     }
 
-
-    protected void onSaveInstanceState(Bundle outState) {
+    protected void onSaveInstanceState (Bundle outState) {
         super.onSaveInstanceState(outState);
-
         outState.putCharSequence(KEY_TEXT_VALUE_1, ShowSpinner2.getText());
         outState.putCharSequence(KEY_TEXT_VALUE_2, ShowSpinner3.getText());
         outState.putCharSequence(KEY_TEXT_VALUE_3, ShowSpinner4.getText());
-
-
     }
-
     public void onItemSelected(Spinner spinner, Spinner spinner2, TextView ShowSpinner) {
         String currency, currency2;
         GetExchangeRate httpRate1;

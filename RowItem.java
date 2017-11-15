@@ -1,11 +1,11 @@
 package org.feup.apm.testexchange;
 
 
-class RowItem {
+public class RowItem {
 
-    int image;
-    String countryNames;
-    String Rate;
+    private int image;
+    private String countryNames;
+    private String Rate;
 
     RowItem(int image, String countryNames, String rate) {
         this.image = image;
@@ -13,7 +13,7 @@ class RowItem {
         this.Rate = rate;
     }
 
-    public int getImage() {
+    int getImage() {
         return(image);
     }
 
@@ -21,7 +21,7 @@ class RowItem {
         this.image=image;
     }
 
-   public  String getCountryNames() {
+    String getCountryNames() {
         return(countryNames);
     }
 
@@ -29,11 +29,11 @@ class RowItem {
         this.countryNames=countryNames;
     }
 
-    public String getRate() {
+    String getRate() {
         return(Rate);
     }
 
-    public void setRate(String Rate) {
+    void setRate(String Rate) {
         this.Rate=Rate;
     }
 

@@ -44,7 +44,7 @@ public class List_Rates extends Activity {
         List_of_Rates = findViewById(R.id.List_of_Rates);
 
         for (int k=0; k<=20; k++) {
-            RowItem row_i = new RowItem(flags[k], countryNames[k], "");
+            RowItem row_i = new RowItem(flags[k], countryNames[k], "1.0");
             RowItems.add(row_i);
         }
         list = new ListAdapter();
@@ -186,7 +186,7 @@ public class List_Rates extends Activity {
         }
     }
 
-    private class ListAdapter extends ArrayAdapter<RowItem> {
+    class ListAdapter extends ArrayAdapter<RowItem> {
 
         ListAdapter() {
             super(List_Rates.this, R.layout.customadapter, RowItems);
@@ -224,7 +224,7 @@ public class List_Rates extends Activity {
     }
 
 
-    private class GetExchangeRate1 implements Runnable {
+    public class GetExchangeRate1 implements Runnable {
         String currency;
 
         GetExchangeRate1(String toCurrency){
@@ -268,7 +268,7 @@ public class List_Rates extends Activity {
                 }
 
             } catch (Exception e) {
-                System.err.println("Caught Exception: " + e.getMessage());
+                System.err.println("Caugth Exception"+e.getMessage());
             } finally {
                 if (urlConnection != null)
                     urlConnection.disconnect();
